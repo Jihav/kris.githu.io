@@ -1,0 +1,268 @@
+:root {
+  --color-white: white;
+  --border-redius-one: 15px;
+  --border-redius-two: 15px;
+  --primary-color: dodgerblue;
+  --box-shadow-one: 0 0 5px white;
+}
+html {
+  font-size: 62.5%;
+  height: 300vh;
+  ::selection {
+    background-color: yellow;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a,
+p,
+span,
+li {
+  font-size: 2.5rem;
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2,
+h3,
+h4,
+h5 {
+  font-size: 3rem;
+}
+.logo {
+  width: 100px;
+}
+.logo > img {
+  width: 100%;
+}
+.top-page {
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+  -webkit-backdrop-filter: blur(75%);
+  background-color: rgba(128, 128, 128, 0.7);
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.nav-lists {
+  display: flex;
+  gap: 2rem;
+}
+/* con-width */
+.con-width {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.nav-links > a:hover {
+  color: var(--color-white);
+}
+.icon-toggler {
+  display: none;
+  cursor: pointer;
+}
+.icon-toggler:hover {
+  color: var(--color-white);
+}
+@media screen and (max-width: 768px) {
+  .icon-toggler {
+    display: block;
+  }
+  .navigation {
+    flex-wrap: wrap;
+  }
+  .nav-lists {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin: 2rem 0;
+  }
+  .nav-links {
+    border-bottom: 1px solid rgb(138, 138, 138);
+  }
+}
+
+/* end of navigation bar */
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 2.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--border-redius-one);
+  cursor: pointer;
+}
+.btn-premary {
+  color: var(--color-white);
+  background-color: var(--primary-color);
+}
+.btn-block {
+  width: 100%;
+}
+.hero-image {
+  max-width: 100%;
+}
+.hero-image > img {
+  width: 100%;
+  border-radius: 1rem;
+}
+.grid-1x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid-hero {
+  align-items: center;
+}
+.hero-heading {
+  color: var(--color-white);
+  line-height: 1;
+}
+.hero-desc > p {
+  color: var(--color-white);
+  margin: 2rem 0;
+}
+.hero {
+  background-color: rgb(127, 127, 127);
+}
+@media screen and (max-width: 768px) {
+  .grid-1x2 {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid-hero {
+    padding: 3rem;
+    gap: 2rem;
+  }
+  .hero-desc {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .grid-1x2 {
+    padding: 0 2rem;
+  }
+}
+/* end of hero-section */
+
+.course-card {
+  background-color: rgb(145, 187, 166);
+  padding: 2rem;
+  border-radius: var(--border-redius-two);
+}
+.course-image {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-one);
+}
+.course-image > img {
+  width: 100%;
+}
+.heading,
+.course-card > p {
+  text-align: center;
+}
+.course-card > p,
+.heading {
+  color: var(--color-white);
+}
+.btn-container {
+  display: flex;
+  gap: 1.5rem;
+}
+.course-card > p {
+  margin: 1rem;
+}
+.btn {
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--color-white);
+}
+.grid-1x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.pc-heading {
+  text-align: center;
+  font-size: 4.5rem;
+  margin: 5rem 0;
+}
+@media screen and (max-width: 900px) {
+  .grid-1x3 {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .grid-1x3 {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+}
+/*  end of Popular courses */
+
+.cate-heading {
+  text-align: center;
+  margin: 5rem 0;
+  font-size: 5rem;
+}
+.icon-cate-link {
+  width: 100px;
+}
+.icon-cate-link > img {
+  width: 100%;
+  transition: transform 0.3s;
+}
+.cate-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 2rem;
+}
+.cate-link:hover > .icon-cate-link > img {
+  transform: scale(1.05);
+}
+.grid-1x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+@media screen and (max-width: 900px) {
+  .grid-1x4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem 0;
+  }
+}
+/* end of categori */
+
+.footer {
+  margin-top: 7rem;
+  padding: 5rem 0;
+  background-color: rgb(32, 32, 90);
+}
+.footer-links > a {
+  color: rgb(177, 177, 177);
+}
+.footer-links > a:hover {
+  color: white;
+}
+.copy-right {
+  color: rgb(179, 179, 179);
+  cursor: pointer;
+}
